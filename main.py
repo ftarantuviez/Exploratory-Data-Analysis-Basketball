@@ -13,6 +13,13 @@ st.title('NBA Player Stats Explorer')
 st.markdown(""" 
 This app performs simple webscraping of NBA player stats data!
 """)
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 st.sidebar.header('User Input Features')
 selected_year = st.sidebar.selectbox('Year', list(reversed(range(1950, 2020))))
@@ -62,3 +69,11 @@ if st.button('Intercorrelation Heatmap'):
     f, ax = plt.subplots(figsize=(7, 5))
     ax = sns.heatmap(corr, mask=mask, vmax=1, square=True)
   st.pyplot()
+
+
+st.write("""
+## App repository
+
+[Github](https://github.com/ftarantuviez/Exploratory-Data-Analysis-Basketball)
+""")
+# / This app repository
